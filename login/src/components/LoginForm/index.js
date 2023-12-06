@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react'
 import PhoneNumberValidation from '../PhoneNumberValidation'
 import OTPValidation from '../OTPValidation';
 import './index.css'
@@ -8,8 +8,6 @@ const LoginForm=()=>{
     const [status,setStatus]=useState('LOGIN')
     const [OTP, setOTP] = useState("");
     const [dashboard,setDashboard]=useState(false)
-    
-
 
     const onClickGetOtp=()=>{
         setStatus("VERIFY")
@@ -88,7 +86,7 @@ const LoginForm=()=>{
             <div className='successImgContainer'>
                 <img src="https://res.cloudinary.com/dywrzseia/image/upload/v1695027900/Group_tubb6n.png" alt="successful img"/>
                 <a className='successful'>Successful</a>
-                <a className='successfulPara'>OPT Is verified successfully</a>
+                <a className='successfulPara'>OPT Is verified successfully, Start your work as pharmacy</a>
                 <button className='successBtn' onClick={onClickContinue}>Continue</button>
             </div>
         </div>
@@ -115,7 +113,8 @@ const LoginForm=()=>{
                return renderVerify()
             case  "SUCCESS":
                 return renderSuccess()
-            
+            /*case "REVIEW":
+                return renderReview()*/
             default:
                 return null;
         }
